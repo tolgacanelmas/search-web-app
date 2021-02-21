@@ -105,7 +105,7 @@ const SearchList = ({ data, handleChangeInput, homeClicked }) => {
                         isOptionsClicked && options
                     }
                 </div>
-                <div>
+                <div className="all-people">
                     {
                         currentPeople.map(person => {
                             return (

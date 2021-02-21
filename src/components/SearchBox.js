@@ -40,7 +40,7 @@ const SearchBox = ({ data, handleChangeInput, searchText }) => {
                                             {person.title}
                                         </h3>
                                         <p>
-                                            {person.name} - {person.createdAt.slice(0,4)}
+                                            {person.name} - {person.createdAt.slice(0, 4)}
                                         </p>
                                     </Link>
                                 )
@@ -62,7 +62,7 @@ const SearchBox = ({ data, handleChangeInput, searchText }) => {
             <p>Search web  app</p>
             <SearchBar handleChangeInput={handleChangeInput} />
             {
-                renderPeople()
+                searchText.length > 0 ? renderPeople() : null
             }
         </div>
     )
