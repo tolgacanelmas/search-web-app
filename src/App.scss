@@ -1,0 +1,299 @@
+html,
+body,
+#root,
+.App {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+button {
+  transition: all 0.3s;
+}
+
+button:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.search-box {
+  height: 100%;
+  margin: auto;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 2rem;
+  max-width: 80%;
+
+  @media (min-width: 1150px) {
+    padding-top: 6rem;
+    max-width: 50%;
+  }
+
+  @media (min-width: 1500px) {
+    padding-top: 10rem;
+    max-width: 40%;
+  }
+
+  & > a {
+    display: block;
+    text-align: center;
+  }
+
+  & > p {
+    text-align: right;
+    font-weight: 700;
+    font-size: 14px;
+    color: #484848;
+  }
+}
+
+.person-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.search-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-wrap: nowrap;
+}
+
+.search-bar > input {
+  border: 1px solid #000;
+  width: 100%;
+  font-weight: 700;
+  border-radius: 8px;
+  color: #888888;
+  padding: 10px;
+  font-size: 18px;
+  text-align: left;
+
+  @media (min-width: 768px) {
+    text-align: center;
+  }
+}
+
+.search-bar > input::placeholder {
+  color: #888888;
+}
+
+.search-bar > input:focus {
+  outline: none;
+}
+
+.search-button {
+  background-color: #204080;
+  transition: all 0.4s;
+  cursor: url("./assets/hover.png"), auto;
+  position: absolute;
+  padding: 10px 20px;
+  height: 100%;
+  right: 88px;
+  transform: translate(100%, 0%);
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 18px;
+  line-height: 21px;
+  outline: none;
+  border-radius: 8px;
+  border: none;
+
+  @media (min-width: 768px) {
+    right: -10px;
+  }
+}
+.search-button:hover {
+  background-color: #4f75c2;
+}
+
+.person-container {
+  border: 1px solid #484848;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+.person-inner {
+  width: 100%;
+  max-height: 250px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  cursor: url("./assets/hover.png"), auto;
+  padding: 5px 5px 10px 10px;
+  margin: 0 20px;
+  border-radius: 5px;
+}
+
+.person:hover {
+  background-color: #c4c4c4;
+  & > h3,
+  & > p {
+    color: #fff;
+  }
+}
+
+.person > h3 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: #484848;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21px;
+  text-align: left;
+}
+
+.person > p {
+  margin-bottom: 0px;
+  border-bottom: 1px solid #585858;
+  font-size: 12px;
+  font-weight: 700;
+  padding-bottom: 5px;
+  line-height: 14px;
+  color: #686868;
+}
+
+.show {
+  padding: 30px 0px;
+  border: none;
+  background: none;
+  color: #000;
+  font-size: 12px;
+  cursor: url("./assets/hover.png"), auto;
+  font-weight: 700;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: #cecece;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+
+.search-list {
+  padding: 20px;
+
+  &-header {
+    display: flex;
+    width: 70%;
+
+    & > a {
+      margin-right: 30px;
+    }
+
+    .search-bar {
+      .search-button {
+        height: auto;
+      }
+    }
+  }
+  &-body {
+    padding-top: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (min-width: 992px) {
+      padding-left: 150px;
+      padding-right: 25rem;
+    }
+
+    @media (min-width: 1500px) {
+      padding-right: 35rem;
+    }
+
+    .options {
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+
+      & > button {
+        background: transparent;
+        padding: 3px;
+        border: none;
+        font-family: Roboto;
+        font-size: 18px;
+        cursor: url("./assets/hover.png"), auto;
+        font-weight: 700;
+        color: #484848;
+      }
+      .sort-people {
+        display: flex;
+        background-color: #fff;
+        top: 100%;
+        flex-direction: column;
+        position: absolute;
+        left: 100%;
+        transform: translate(-30%, 5%);
+        border: 1px solid #484848;
+        padding: 10px 13px;
+        z-index: 100;
+        border-radius: 4px;
+
+        & > button {
+          background-color: transparent;
+          border: none;
+          color: #000;
+          font-weight: 700;
+          font-size: 14px;
+          font-family: "Roboto", sans-serif;
+          white-space: nowrap;
+          margin-bottom: 5px;
+          padding: 5px;
+          border-radius: 4px;
+          cursor: url("./assets/hover.png"), auto;
+
+          &:hover {
+            background-color: #c4c4c4;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    & > ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+
+      & > li {
+        margin-right: 5px;
+        border: 1px solid #484848;
+        border-radius: 4px;
+        color: #484848;
+        transition: 0.2s all;
+        padding: 3px 7px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #204080;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
