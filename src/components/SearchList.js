@@ -6,6 +6,7 @@ import icon from '../assets/icon-finder.png'
 
 const SearchList = ({ data, handleChangeInput, homeClicked }) => {
     const [currentPage, setCurrentPage] = useState(1)
+    const [activeIndex , setActiveIndex] = useState(1)
     const [peoplePerPage, setPeoplePerPage] = useState(6)
     const [currentPeople, setCurrentPeople] = useState(data.slice(0, 6))
     const [isOptionsClicked, setIsOptionsClicked] = useState(false)
@@ -24,6 +25,7 @@ const SearchList = ({ data, handleChangeInput, homeClicked }) => {
     }, [currentPage])
 
     const paginate = (number) => {
+        setActiveIndex(number)
         setCurrentPage(number)
     }
 
@@ -124,7 +126,7 @@ const SearchList = ({ data, handleChangeInput, homeClicked }) => {
                 <ul>
                     {
                         pageNumbers.map(number => (
-                            <li key={number} onClick={() => paginate(number)}>
+                            <li className={activeIndex == number ? "active" : ""} key={number} onClick={() => paginate(number)}>
                                 {number}
                             </li>
                         ))

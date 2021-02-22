@@ -330,6 +330,11 @@ margin-bottom: 30px;
         padding: 3px 7px;
         cursor: pointer;
 
+        &.active {
+          background:#204080;
+          color: #fff;
+        }
+
         &:hover {
           background-color: #204080;
           color: #fff;

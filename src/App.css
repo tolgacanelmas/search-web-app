@@ -435,6 +435,11 @@ a {
   cursor: pointer;
 }
 
+.search-list-body > ul > li.active {
+  background: #204080;
+  color: #fff;
+}
+
 .search-list-body > ul > li:hover {
   background-color: #204080;
   color: #fff;
