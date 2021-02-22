@@ -69,6 +69,11 @@ a {
 .search-box > p {
   text-align: right;
   font-weight: 700;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: 30%;
   font-size: 14px;
   color: #484848;
 }
@@ -145,7 +150,7 @@ a {
   transition: all 0.4s;
   cursor: url("./assets/hover.png"), auto;
   position: absolute;
-  padding: 10px 20px;
+  padding: 10px 25px;
   height: 100%;
   right: 88px;
   -webkit-transform: translate(100%, 0%);
@@ -254,34 +259,84 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 70%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .search-list-header {
+    width: 70%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 .search-list-header > a {
   margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  .search-list-header > a {
+    margin-bottom: 0px;
+  }
+}
+
+.search-list-header .search-bar > input {
+  text-align: left;
+  color: #484848;
+  padding-left: 15px;
+}
+
+.search-list-header .search-bar > input::-webkit-input-placeholder {
+  color: #484848;
+}
+
+.search-list-header .search-bar > input:-ms-input-placeholder {
+  color: #484848;
+}
+
+.search-list-header .search-bar > input::-ms-input-placeholder {
+  color: #484848;
+}
+
+.search-list-header .search-bar > input::placeholder {
+  color: #484848;
 }
 
 .search-list-header .search-bar .search-button {
   height: auto;
+  right: 107px;
+}
+
+@media (min-width: 768px) {
+  .search-list-header .search-bar .search-button {
+    right: 0px;
+  }
 }
 
 .search-list-body {
   padding-top: 70px;
   padding-left: 20px;
   padding-right: 20px;
+  margin-right: auto;
+  width: 90%;
 }
 
 @media (min-width: 992px) {
   .search-list-body {
+    width: 60%;
     padding-left: 150px;
-    padding-right: 25rem;
   }
 }
 
-@media (min-width: 1500px) {
-  .search-list-body {
-    padding-right: 35rem;
-  }
+.search-list-body .all-people .person {
+  margin-bottom: 30px;
 }
 
 .search-list-body .options {
@@ -293,6 +348,13 @@ a {
       -ms-flex-pack: end;
           justify-content: flex-end;
   position: relative;
+  padding-right: 30px;
+}
+
+@media (min-width: 768px) {
+  .search-list-body .options {
+    padding-right: 0px;
+  }
 }
 
 .search-list-body .options > button {
@@ -318,12 +380,19 @@ a {
           flex-direction: column;
   position: absolute;
   left: 100%;
-  -webkit-transform: translate(-30%, 5%);
-          transform: translate(-30%, 5%);
+  -webkit-transform: translate(-100%, 5%);
+          transform: translate(-100%, 5%);
   border: 1px solid #484848;
   padding: 10px 13px;
   z-index: 100;
   border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .search-list-body .options .sort-people {
+    -webkit-transform: translate(-30%, 5%);
+            transform: translate(-30%, 5%);
+  }
 }
 
 .search-list-body .options .sort-people > button {
